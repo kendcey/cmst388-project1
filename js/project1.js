@@ -59,8 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector("#change-language").addEventListener('click', () => {
         // TODO: Add code to change the text of the currentLanguage class to the value of the newLanguage ID:
         // - 1: Create a new variable called inputValue and set it to the value of the #newLanguage id
+        const inputValue = document.getElementById('newLanguage').value;
         // - 2: Create a new variable called element and set it to the .currentLanguage class
+        const element = document.querySelector('.currentLanguage');
         // - 3: Using .innerHTML (https://www.w3schools.com/jsref/prop_html_innerhtml.asp), update element with inputValue
+        element.innerHTML = inputValue;
     });
 
     /* PART 4: TOGGLES
@@ -75,8 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentColor = window.getComputedStyle(box).backgroundColor;
             if (currentColor === boxColor) {
                 // TODO: element backgroundColor currently has boxColor set, change it to 'white'
+                 box.style.backgroundColor = 'white';
             } else {
                 // TODO: element backgroundColor currently does not have boxcolor set, set it to boxColor
+                 box.style.backgroundColor = boxColor;
             }
         });
     });
@@ -85,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector("#button_toggle_roundedges").addEventListener('click', () => {
         document.querySelectorAll(".box").forEach(box => {
             // TODO: Add a toggle to box.classList and toggle the CSS 'round-edge' class
+            box.classList.toggle('round-edge');
         });
     });
 });
