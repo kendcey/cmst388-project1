@@ -5,17 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
     */
 
     // TODO: Declare variables for name, age, and isStudent setting values with your own name, age, and student status.
+    const name = "Ken";
+    const age = 25;
+    const isStudent = true;
     
     const introduction = (name, age, isStudent) => {
 
         // TODO: Check if isStudent is true or false and set text output to a new variable called studentStatus
         // - If isStudent is true, set studentStatus to "I am currently a student."
         // - If isStudent is false, set studentStatus to "I am not a student."
-        
+        let studentStatus;
+        if(isStudent) {
+            studentStatus = "I am currently a student.";
+        } else {
+            studentStatus = "I am not a student.";
+        }
+
         // TODO: Using string concatenation, store a message to a new variable called message. 
         // - The message variable should should include your name, age, and a statement about whether you are a student or not. 
         // - Example message format: "Hello, my name is John. I am 25 years old and I am currently a student."
-    
+    const message = "Hello, my name is " + name + ". I am " + age + " years old and " + studentStatus;
+        
         // DO NOT CHANGE: The following code selects the messageDisplayArea ID in the HTML file and appends a div 
         // tag with the message variable defined above.
         const messageDisplayArea = document.getElementById('messageDisplayArea');
@@ -34,7 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector("#add-classes").addEventListener('click', () => {
         document.querySelector('.selector-examples li:first-child').classList.add('first');
         document.querySelectorAll('.selector-examples li:nth-child(odd)').forEach(el => el.classList.add('odd'));
-        // TODO: Add remaining selectors using nth-child, loops and conditional logic where approriate. (https://www.w3schools.com/CSSref/sel_nth-child.php) 
+        
+        // TODO: Add remaining selectors using nth-child, loops and conditional logic where approriate. (https://www.w3schools.com/CSSref/sel_nth-child.php)
+        document.querySelectorAll('.selector-examples li:nth-child(even)').forEach(el => el.classList.add('even'));
+        document.querySelector('.selector-examples li:nth-child(4)').classList.add('highlighter');
+        document.querySelector('.selector-examples li:nth-child(5)').classList.add('highlighter');
+        document.querySelector('.selector-examples li:last-child').classList.add('last');
     });
 
     /* PART 3: REPLACEMENT TEXT
